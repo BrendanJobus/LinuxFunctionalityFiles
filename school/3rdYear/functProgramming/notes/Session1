@@ -1,0 +1,48 @@
+Exam: 80%, 2hr, Continuous Assessment: 20%
+
+Using Stack that manages libraries.
+
+Basic notion of computation: the application of functions to arguments.
+Basic idea of program: writing fuction definitions
+Functional languages are declarative:	more emphasis on what rather that how.
+
+Function definitions are written as equations
+	double x = x + x
+	quadruple x = double (double x)
+compute the length of a list
+	length [] = 0
+	length (x:xs) = 1 + length xs
+recursion is the natural way to describe repeated computation
+Haskell can infer tyypes itself (Type Inference)
+
+What is the type of length?
+	length [1,2,3]
+	3
+	length ['a','b','c','d']
+	4
+	length [[],[1,2],[3,2,1],[],[6,7,8]]
+	5
+length works for lists of elements of arbitrary type
+length :: [a] -> Int
+Here 'a' denotes a type variable, so the above reads as "length takes a list of (arbitrary) type a and returns an Int".
+A similar notion to "generics" in O-O languages, but builtin without fuss.
+
+What's wrong witht the following (recursive) definition?
+	from n = n : (from (n+1))
+nothing ! It just generates an infinite list of ascending numbers, starting from n.
+take n list - return first n elements of list.
+what is take 10 (from 1) ?
+	take 10 (from 1)
+	[1,2,3,4,5,6,7,8,9,10]
+Haskell is a lazy language, so values are evaluated only when needed.
+
+
+Sorting the empty list gives the empty list:
+qsort [] = []
+qsort (x:xs)
+	= qsort [y | y <- xs, y < x]
+	++ [x]
+	++ qsort [z | z <- xs, z >= x]
+we have used haskell list comprehensions:
+[y | y <- xs, y < x]
+"build list of ys, where y is drawn from xs, such that y < x" 

@@ -1,0 +1,3 @@
+Two use cases, taking in data and storing, and retreiving and giving back data
+
+One of the actors is the database or server

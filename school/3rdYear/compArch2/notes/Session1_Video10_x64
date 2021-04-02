@@ -1,0 +1,99 @@
+Extension of IA32
+Originally developed by AMD
+Eidght additional registers (r8 - r15)
+64, 32, 16 and 8 bit arithmetic
+Same instruction set as IA32
+64 bit virtual and physical address space (theoretically anyway, 48-bit actual adress bus)
+
+
+64-bits		32-bits		16-bits		8-bits
+rax		eax		ax		al
+rbx		ebx		bx		bl
+rcx		ecx		cx		cl
+etc...
+r8		r8d		r8w		r8b
+r9		r9d		r9w		r9b
+etc...
+
+16, 64 bit general purpose registers
+8, 80-bit floating point registers
+A 64-bi status flag register ramed RFLAGS(only the lower 32-bits used) and 64-bit instruction pointer named RIP
+8, 64-bit MMX registers
+16, 128-bit XMM registers
+
+Various conventions
+*Calling convention for Windows		*Calling convention for GCC
+*First 4 params->RCX, RDX, R8, R9	*First six params->RDI, RSI, RCX, RDX, R8, R9
+*Rest are pushed onto stack in reverse	*Rest are pushed on in reverse order
+order
+*Caller preserved registers->RAX, RCX	*Caller preserved registers->RAX, RCX, RDX, RSI, RDI, R8
+RDX, R8, R9, R10, R11			 R9, R10, R11
+*Callee preserved registers->RBX, RBP	*Callee preserved->RBX, RBP, R12, R14, R15
+RDI, RSI, R12, R14, R15
+*Stack aligned on the 16-byte boundary	*Stack aligned on the 16-byte boundary
+*Caller must allocate 32-bytes of	*No shadow space
+shadow space
+*No need to create a stack frame with	*Stack frame may be created if stack needed for local
+RBP(may be created if more than 32-byte	Storage
+space is needed)
+
+Defining a 64 bit int and creating a fibonaci function in x64
+
+_int64 fib(_int64 n)
+// _int64 is Microsoft specific
+// may use long long
+{
+	// here INT64 ca be defined as:
+	// #define INT64 long long
+	INT64 fi, fj, t;
+
+	if(n <= 1)
+		return n
+	
+	fi = 0;
+	fj = 1;
+
+	while (n > 1) {
+		t = fj;
+		fj = fi + fj;
+		fi = t;
+		n--;
+	}
+	return fj;
+
+Calling fib function
+
+fib_x64:	mov rax, rcx; rax = n
+		cmp rax, 1  ; if (n <= 1)
+		jle fib_x64_1; return n
+		xor rdx, rdx; fi = 0
+		mov rax, 1  ; fj = 1
+
+fib_x64_0:	cmp rcx, 1  ; while (n > 1)
+		jle fib_x64_1; 
+		mov r10, rax; t = fj
+		add rax, rdx; fj = fi + fj
+		mov rdx, r10; fi = t
+		dec rcx     ; n--
+		jmp fib_x64_0;
+fib_x64_1:	ret         ; return
+
+Calling a Non-leaf function with arbitrary arguments
+
+A function that calls another function with arbitrary/variable arguments
+Allocate stack space according to: max(32, 8 x n) where n = number of arguments
+Use the same stack space for multiple calls to such a function
+Makes it easier for compiler to determine how much stack space is required
+
+Use %I64d to format a 64 bit integer for printf
+parameters a and b passed to print_nums in RCX and RDX respectively
+Need to call external printf(...) function with 4 parameters
+	rcx [address of format string]
+	rdx [a]
+	r8 [b]
+	r9 [a + b]
+
+defining a string
+fxp2 byte 'a = %I64d b = %I64d a+b = %I64d', OAH, OOH;
+Name of string				     New   Null character
+                                             Line

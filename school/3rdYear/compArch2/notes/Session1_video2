@@ -1,0 +1,66 @@
+32 bit cpu performs 8, 16 and 32 bit integer + 32 and 64 bit floating point arithmetic
+
+Address Space:
+Amount of memory space availabel for the process
+Linear address of 4GB
+Pentium pro and later: 36 bit addres bus, 64 GB of memory through extended physical address
+
+32-Bit General-Purpose Regiters(just use these):
+EAX	EBP
+EBX	ESP
+ECX	ESI
+EDX	EDI
+
+Naming scheme:
+E: Extended(legacy from 16 bit), EXX will get you the whole 32 bits, XX will get you 16 bits
+ah or al get most significant bit or least significant bit of regist a
+
+For P and I registers only 32 and 16 bit are accessible
+
+EAX (extended accumulator register) -> Automatically used by multiplication and division instructions
+ECX -> Loop counter
+ESP -> Extended stack pointer register
+ESI and DSI -> Extended source and destination index registers
+EBP -> Extended base pointer or extended frame pointer register
+
+EIP: Extended instruction pointer or program counter (PC)
+     Contains the address of the next instruction to be executed
+     Needs to be manipulated for loop instructions
+
+EFLAGS Register:	A register where individual bits have a different meaning
+			Either shows the status of the processor after a user operation or system level operation or is used to control the processor
+			Examples:
+			   Carry flag, parity flag, zero flag, sign flag -> Status
+			   Direction and interrupt enable -> Control
+
+Variable instruction size
+Requires multi-step fetch and decode
+High code density
+
+The general structure of an instruction
+	[label:] mnemonic [operands] [; comments]
+
+Examples:
+Two address(MASM)
+	add eax, ebx -> eax = eax + ebx
+Alternative GNU syntax
+	add %ebx, %eax -> eax = eax + ebx destination is on the right, flow of data is to the right
+
+Most common: two operands
+	register/register
+	register/immediate
+	register/memory
+	memory/register
+
+Memory/memory and memory/immdeiate NOT allowed
+
+Addressing modes:
+Immediate addressing mode is using constants e.g. mov %n, %eax; where n is a constant
+Register addressing, e.g. mov %eab, %eax
+Direct addressing, e.g. mov %a, %eax; where a is a memory address
+Reg. indirect e.g. mov %[ebx], %eax
+Reg. relative e.g. mov %[ebx + n], %eax; great for going through arrays
+Base plus index e.g. mov %[ebx + ecx], %eax
+Base rel. + index e.g. mov %[ebx + ecx + n], %eax
+Scaled indexed e.g. mov %[ebx * s + n], %eax
+Scaled indexed e.g. mov %[ebx + ecx * s + n], %eax

@@ -1,0 +1,7 @@
+Classes:
+
+Create classes with the class keyword, close off a clase with a semi-colon, initialized like a struct. By convention, name classes with a capital as the starting letter.
+Using the m_ prefix will make it explicit that we are dealing with member data. Member variables should be set to private and member functions should be set to public,
+unless there is a good reason for doing otherwise. Set something to be public with 'public:' and everything is set to private by default in a c++ class. Constructors are
+created by having a function with no return type specified and the name being the EXACT same as the class name. If you need at constructor that does nothing, use 
+Constructor() = default;. 

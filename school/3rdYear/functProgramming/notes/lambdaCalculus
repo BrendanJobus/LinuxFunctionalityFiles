@@ -1,0 +1,23 @@
+Syntax:
+Infinite set Vars, of variables:
+	u,v,x,y,z,...,x1,x2,... E Vars
+
+Well-formed lambda calculus expressions LExpr is the smallest set of strings matching the following syntax:
+
+	M,N,... E LExpr ::= v
+			| (lambdax . M)
+			| (M N)
+
+A variable occurrence is free in an expression if it is not mentioned in an enclosing abstractoin.
+e.g. x (lambda y . (yz))
+z is free
+
+A variable occurrence is bound in an expression if it is mentioned in an enclosing abstraction.
+e.g. x (lambda y . (yz))
+y is bound
+
+A variable can be both free and bound in the same expression.
+e.g. (x(lambda x.(xy))
+The first x is free and the second is bound
+
+A bound variable is like a local variable, where as a free is global.

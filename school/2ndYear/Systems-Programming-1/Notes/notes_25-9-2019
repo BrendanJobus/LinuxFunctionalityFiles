@@ -1,0 +1,49 @@
+double evaluate_postfix_expression (char * expr, int nterms)
+{
+	struct double_stack * stack;
+	stack = new_double.stack(nterms);
+
+	for (int i = 0; i < nterms; i++)
+	{
+		\\if(expr [i][0] <= '9' && expr[i][0] >= '0')
+		\\{
+		\\{
+		\\we have a number
+		\\ atof = string to float (ascii to float)
+		\\ atoi = string to integer
+		\\double value = atof(expr[i]);
+			\\}
+
+		if(strlen(expr[i]) == 1)
+		{
+			switch(expr[i][0])
+			{
+				case '+':
+
+				case '-':
+
+				case 'x':
+
+				case '/':
+
+				case '^':
+
+				// we have an operator
+
+					apply-operator(stack, expr[i][0]);
+					break;
+
+				default: value = atof(expr[i];
+					push_double_stack(stack, value);
+					break;
+			}
+		}
+		else
+		{ \\stlen > 1
+			value = atof{expr[i]);
+			push_double_stack(stack, value);
+		}
+	}
+	value = pop_double_stack(stack);
+	return value;
+}

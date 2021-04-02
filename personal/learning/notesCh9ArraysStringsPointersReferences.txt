@@ -1,0 +1,66 @@
+we can use std::size() to get the number of elements in an array, or std::ssize() for a signed version, which is unlike sizeof() which gives the size of 
+the array in bytes. std::size() is in <iterator>.
+
+C++ includes insertion sort for arrays in <algorithm> under std::sort().
+
+string_view:
+
+std::string_view is a fast version of std::string, unlike std::string, which copies data to a new string, std::string_view simply creates views to look
+at the original string, because of this, we can change the original even after initializing the views, and the views will display the new data, e.g.
+char arr[]{'Gold'}; std::string_view str{arr}; arr[0] = 'B'; cout << str << '\n'; this will print out 'Bold' intead of 'Gold'. For read only strings,
+std::string_view is preferable to std::string. Make sure that the string that is being viewed is not destroyed while you are using the view. We can access
+the string that we are viewing with data() e.g. std::string_view str{somedata}; somedata == str.data(). Don't use data() if the view has been modified or is
+not null terminated.
+
+Pointers:
+
+The type of the pointer has to match the type of the variable it stores. Pointers should be null initialized if they are not going to be used right away,
+via double *ptr{0}; this will fail in a conditional e.g. it will fail if (ptr);. However, we should use the keyword nullptr for any null pointer related things
+as it will automatically be converted to the type we are working with, nullptr_t is the corresponding type of nullptr. 
+
+When doing arithmetic on pointers to get the next elemnt of an array for example, the compiler will automatically convert to properly iterate through the array,
+i.e. if we did ptr + 1, and ptr was of type int *, we would be actually getting the next int element, and under the hood, c++ would've done something like
+ptr + (sizeof(int) * 1);.
+
+cout will assume that you are trying to print an address for all types except for char arrays, if you try to print a character array or character pointer,
+it will assume you want to print its contents.
+
+Memory allocation:
+
+Static memory allocation happens for static and global variables. Memory for these varaiables is allocated once when
+the program is run and persists through the life of the program.
+
+Automatic memory allocation happens for function parameters and local variables. Memory for these types is allocated when the relevant block is entered and freed
+when the block is exited, as many times as necessary.
+
+
+Dynamic memory allocation:
+
+Dynamic memory allocation is useful when the size of the variable or array is not known at compile time, and/or when we don't want automatic memory allocation
+and de-allocation.
+
+One way of creating a dynamic variable is through the new keyword, e.g. for a new integer, we can do int *ptr{new int}, this tells the compiler to create a new
+integer memory address, and then assign the pointer ptr to point to the memory address for it. We can also initialize the data in this memory address like so
+int *ptr1{new int (5) }; or int *ptr2{new int{6} };.
+
+To delete single variables, we ue the delete keyword on the pointer to de-allocate the memory address, and then set the pointer to be a null pointer so that it
+is no longer pointing at an empty address. A dangling point
+
+Memory leaks:
+
+There are multiple ways for memory leaks to occur, if a dynamically allocated variable is not deleted before going out of scope, it is lost and will persist
+as a memory leak until the program terminates. We can also get a memory leak if a pointer to a dynamic memory address is assigned a new value, this can 
+accidentaly happen if we double-allocate memory.
+
+Dynamically allocate arrays:
+
+simply use the new *type*[]{} to create a new array, delete[] will delete the data in memory and there is no need to delete the memory as delete[] sets the array
+pointer to be a null pointer.
+
+Const pointers:
+
+const pointers can be set to look at variable or constant data, a const pointer however, does not allow us to change the data stored in that memory position through
+the pointer no matter what, we can change what the pointer is looking at, but we can't change the data it is looking at, however, if we still have another reference
+to the data, and it is not const, we can change it through the other reference. If we do not want a pointer that can be changed, but a pointer that always points to
+the same data and also want a pointer that can have its data changed, place the const after the type. We can use both a const before and after the type to have a
+pointer that cannot be changed and a pointer that points to data that cannot be changed through the pointer.

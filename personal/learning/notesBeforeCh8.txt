@@ -1,0 +1,37 @@
+use type variabel{}; to initialize variables that are not arrays.
+
+we can omit parts of a for loop, e.g. for( ; x < 10; ){} which allows us to define x somewhere else and increment it inside the for loop, incrementing
+does not look that useful but excluding the initialize looks very promising, also, we can do for(;;) to do an infinite loop.
+
+use continue to skip to the next iteration of the loop.
+
+always add a header guard to ensure that a header is not defined multiple times, used #ifdef VARIABLE_H, followed by #define VARIABLE_H, make sure to end 
+it with a #endif, #pragma once is a more concise way to do this but is not always supported.
+
+if a variable is to be a contant but we do not have a way to define it with literals, use const, otherwise use constexpr.
+
+we can use namespaces to create multiple functions with the same name but with different accessing methods, e.g. by creating two namespaces
+foo and goo, we can access a function within them called speak() via foo::speak() goo::speak(), useful for when we want functions with the same name
+but to do different things without using classes and creating static functions.
+
+we can use static as a keyword on a global variable to create internal linkage and make them only accessible within its own file, we can use extern as a 
+keyword to make variables externaly linked, non const variables are set to external by default along with functions, however you still have to forward declare them.
+
+we can use type aliases by doing something like 'using testScore_t = int;', we should use this over typedef as it is more explicit to a programmer as to
+what we are trying to do.
+
+we can use auto to simplify somethings when taking in data from functions, VERY helpful when taking in data with a type that is defined in another library.
+
+(int) variable is the standard c type casting but should be avoided, something like static_cast<int>(variable) is better as it will ensure that we are only
+casting what we want to be casting, static_cast is also checked at compile time so it should make it easier to debug.
+
+we can use inline namespaces to make an explicit versioning effect, by having an inline version that will be called if we either explicitly call it with,
+for example, v1::function() or implicitly via, function(), and a v2 version would have to be called by v2::function(). This would make versioning and ensuring
+that we are only using well tested code in production code almost trivial.
+
+if we are creating constants to be used in another file, create them in a .cpp file and then forward declare them in the corresponding .hpp file, this will allow
+us to only have to re-link the object files, and only recompile the .cpp file that holds the constants, this can drastically reduce the time required for
+compiling over the development cycle of a project.
+
+inline variables basically are just instantiated once and are the prefered way of creating variables to be shared accross file in c++17 and greater. we
+can also use them to create static variables in classes that can be changed by the program later on via something like int MyClass::num = 10;

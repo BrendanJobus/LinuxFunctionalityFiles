@@ -1,0 +1,21 @@
+Each "lecture" is 50 mins long, might be broken up into different videos. 2 "lectures" per week, so 100 mins of videos to watch each week.
+
+5 or 6 tutorials/assignments
+
+Exam 80% assignments 20%
+
+Exam in December, take home, have 24-hours to complete, should take no more than 6 hours
+
+Material is available on both blackboard and course webpage
+
+***Book to look at - Computer architecture - A quantitative approach by John Hennessey & David Patterson (Others not as important)
+
+High performance computer architecture by Harold S. Stone
+
+Comuter Org and Desing by John Hennes & David Patterson
+
+Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 1 and 2
+Volume 1: Basic Architecture
+Volume 2: Instruction Set
+
+NASM needed to assemble the assembly and will need to modify code as it is not cross compatible with the microsoft assembler

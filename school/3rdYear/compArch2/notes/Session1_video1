@@ -1,0 +1,17 @@
+CISC - Intel & AMD
+RISC - ARM & RISC-V
+
+RISC - Reduced Instruction Set Computer
+CISC - Complex
+
+RISC:
+Load/store architectures - explicitly load data from memory and store results
+Large code size
+Large number of general purpose registers
+
+CISC:
+Complex and a large number of instructions that access memory directly
+Small number of general purpose registers
+Complex instruction decoding hardware
+Internally, CISC instructions are broken down into small micro-operations which are executed in a singl cycle, sometimes even in parallel
+Intel has a RISC core to execute simple instructions in one clock cycle, these are the calls which are most common

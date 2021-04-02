@@ -1,0 +1,190 @@
+Advantages of databases
+
+Search and Retreival Capabilities
+	Filtered according to specific needs
+Reduced Data Redundancy
+	Ease of update
+Greater Data Integerity
+Independence from applications, concurrent access
+Improved Data Security
+Reduced Costs for Data Entry, storage and retrieval
+
+Disadvantages of the DB Approach
+Training required for management and querying
+Database systems are complex and time-consuming to design
+Cost
+	Software
+	Hardware
+	Training
+Loss of autonomy brought about by centralised control of the data
+Inflexibility due to complexity
+
+Database languages
+Programming languages which are used to:
+	Define a database
+		its entities and the relationships between them
+	Manipulate its content
+		insert new data and update or delete existing data
+	Conduct queries
+		request information based upon defined criteria
+The Structured Query Language(SQL) is the most commonly used language for Relational Databases
+	Supported by all relational DBMS and is a standard
+
+SQL
+SQL is split into four sets of commands which are divided based upon the tasks they are used for:
+	Data Definition Language
+	Data Modification Language
+	Data Query Language
+	Data Control Language
+
+Transactions
+A way to group actions that must happen atomically
+	all or nothing
+Guarantees to move the DB content from one consistent state to another
+Isolates these actions from parallel execution of other actions/transactions
+Ensures that DB is recoverable in case of failure
+	e.g. the power goes out
+
+Users
+DBMS implementer
+	Builds the DBMS system
+Database designer
+	Designsthe Database, Establishes the Schema
+Database application developer
+	Develops programs that operate upon the DB
+Database administrator
+	has overall responsibility for the DB including specifying access constraints, selection of appropriate backup and recoverymeasures, monitoring perormance etc.
+
+Emergent Databases
+XML Databases
+	Document-Oriented
+NoSQL Databases
+	Web Scale, Non-Relational, Open Source
+In Memory Databases
+	Stores data in main memory rather that on disk
+Others
+	Massively parallel processing (MPP) databases
+	Online analytical processing (OLAP) databases
+
+
+
+Database Architecture
+
+Database Systems
+Database System(DBS)
+	DBMS
+	DB
+		application data
+		associated metadata
+	Application programs
+Metadata and data are stored separately
+
+DBMS Architecture
+Databse users are provided an abstract view of the data by hiding certain details of how it is physically stored
+DBMS describe Databases at three levels:
+	Internal (Physical) Level
+	Conceptual (Logical) Level
+	External (View) Level
+This is commonly referred to as the "three-level DBMS architecture"
+
+
+Schemas
+Each level of the architecture consists of one or more views of the underlying data
+Views are described by schemas (meta-data)
+A DB consists of:
+	physical data
+	an internal or physical schema
+	a conceptual or logical schema
+	several external schemas
+Schemas are stored in the system catalogue
+
+Internal or Physical level
+	The lowest level of data abstraction
+	Internal Schema describes how the data is physically stored and organizedon the storage medium
+	Various aspects are considered to achieve optimal runtime performance and storage space utilization, including:
+	storage space allocations techniques
+	access paths such as indexes
+	data compression and encryption techniques
+
+Conceptual or logical level
+	Deals with the logical structure of the entire database
+	Conceptual Schema describes what data is stored in the database and the relationsships among the data without any concern for the physical implementation
+	This is the overall view of the database and includes all the information that is going to be represented in the database
+
+External or View level
+	The highest level of abstraction that deals with the user's view of the database
+	Most users and applications do not require access to the entire data stored in the database
+	External Schemas (or User Views) describe a part of the database for a particular group of users or applications.
+	This is a powerful and flexible security mechanism, as parts of the database are hidden from certain users
+		The user is not aware of the existence of any attributes that are missing from the view
+
+DBMS storage & physical Database components
+	The Physical Databse is usually stored on Hard Disk
+		The OS controls disk access
+	The STORED DATA MANAGER(SDM) controls access to DBMS information on disk
+		including buffer management
+
+DBMS user interface components
+DBMS users
+	Casual users
+	Applications programmers
+	Parametric Users
+	DBA Staff
+Different Interfaces are used by each type of user
+
+DBMS DDL Components
+DDL compiler processes schema definitions and stores them in catalogue
+Catalogue contains information such as:
+	Names and Sizes of files
+	Names and Data Type of Data Items
+	Storage details
+	Mapping information among Schemas
+	Constraints
+	...
+
+DBMS Programmer interface components
+Application Programmers write programs which need to access a DB
+The Precompiler extracts DML commands from the host language program
+The extracted commands are sent to the DML Compiler
+The rest of the program is sent to the Host Language Compiler
+
+DBMS Compiled Application Components
+Object code for DML commands and the rest of the program are linked forming a canned transaction
+	The executable code of a canned transaction calls the run-time processor
+	Canned transactions are used by parametric users
+
+
+DBMS Runtime Components
+Run-Time Database Processor handles all Database access at run-time:
+	Privileged Commands
+	Executable Queries
+	Canned Transactions
+Utilises and Updates the Catalogue
+May be responsible for Buffer Management
+Manages Concurrency Control and Backup and Recovery as part of Transaction Management
+
+System catalogue and Data Dictionary
+The DDL, and hence the system catalogue, are primarily concerned with syntactic definition of the data
+Data Dictionaries augment the internal DBMS catalogue with semantic support
+	Accessed directly by users(i.e. DBA)
+	Catalogue accessed by the DBMS
+There are two main ways of coupling Data Dictionaries and System Catalogues:
+	Integrated Data Dictionary
+	Independent Data Dictionary
+
+Integrated DB and Data Dictionary
+The majority of DBMS have an integrated Data Dictionary
+Data Dictionary is an integral part of DBMS
+	Documents the computerised data that is managed by the DBMS
+It is gerally fully active
+	accessed at run-time by DBMS software
+
+Independent Data Dictionary systems
+Independent, free-standing system performing its own data management functions
+Normally passive
+	No run-time link between the data dictionary and the DBMS
+	Hence DBMS has to have its own System Catalogue
+Often generates metadata automatically for a variety of DBMS in the form of DDL
+	Helps to ensure consistency of metadata between the Data Dictionary and the System catalogue
+
+

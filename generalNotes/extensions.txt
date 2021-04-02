@@ -1,0 +1,19 @@
+C/C++
+c/C++ Clang
+clangd
+Community Material Theme
+Debugger for java
+Github pull requests and issues
+Go
+Gruvbox Material
+Haskell
+Haskell syntax
+Horizon Theme
+Java language support
+Magic Python
+Material Icon Theme
+Material Theme
+Material theme icons
+One Dark Pro
+Owlet
+Python

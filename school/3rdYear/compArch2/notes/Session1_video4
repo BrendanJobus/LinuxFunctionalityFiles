@@ -1,0 +1,50 @@
+An Example:
+int f(int p0, int p1, int p2) {
+int x,y;
+x = p0 + p1;
+...
+return x + y;
+}
+
+;; f(1, 2, 3)
+;; passing arguments right to left
+push 3
+push 2
+push 1
+
+;; calling the function
+call f
+
+;; add 12 to esp to remove parameters from the stack
+add 12, %esp
+
+
+
+;; Establishing the stack frame
+
+;; prologue:
+f: push %ebp; save ebp
+move %esp, %ebp; ebp -> new stack frame
+
+sub 8, %esp; space allocation for local variables (x,y)
+push %ebx; space non-volatile registers used by function
+
+;; Function body
+;; x = p0 + p1
+mov [ebp + 8], %eax; access first parameter
+add [ebp + 12], %eax; eax = p0 + p1
+mov %eax, [ebp - 4]; x = p0 + p1
+
+;; return x + y
+mov [ebp - 4], %eax; eax = x
+add [ebp - 8], %eax; eax = x + y
+;; Returning
+pop %ebx	; restore saved registers
+
+;; epilogue:
+mov %ebp, %esp	; restore esp
+pop %ebp	; restore ebp
+
+ret 0		; return from function
+
+

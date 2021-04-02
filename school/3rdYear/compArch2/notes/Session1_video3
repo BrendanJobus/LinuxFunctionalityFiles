@@ -1,0 +1,42 @@
+Procedures/functions:
+Caller -> The function that calls another function
+	Passes argument in a certain way
+	Will have data in some of the registers which are important( need to preserve)
+	Cals the function
+	Returns from the function
+	Remove parameters
+
+To preserve the data in the registers, it saves some of the data to the stack
+
+Callee -> The function that is called from another function
+	Receive arguments in a certain way
+	Use internal registers for own computations (need to sace them before usage)
+	Use the stack for some local variables
+	Computation
+	Restore saved registers
+	De-allocate space for local variables
+	Return with return value in a certain register
+
+Caller and Callee should agree on two things:
+how the arguments are passed and how the data that was already in the registers should be preserved
+
+This is called the calling conventions
+
+There are several IA32 procedure/function calling conventions
+Use Microsoft_cdecl calling convention so C/C++ and IA32 assembly language code can be mixed
+
+Registers:
+	Caller must save EAX, ECX, and EDX if it wants its contents to be preserved(they are volatile), these registers are called caller preserved registers
+	Callee must save EBX, EDI, and ESI if it needs to use them
+	Callee return result in EAX
+
+Parameters:
+	Caller pushes arguments (right-to-left) onto the stack
+	Caller pops (removes) arguments from the stack
+	Why are parameters pushed right-to-left?
+		C/C++ pushes parameters right-to-left so functions like printf(char *formats, ...) [which can accept an arbitrary number of parameters] can be handled more easily
+
+Stack Frames:
+Stack plays an important role in procedure calling
+For each procedure call, a stack frame or runtime stack is estalished
+ESP and EBP maintain the stack frame

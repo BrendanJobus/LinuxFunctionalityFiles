@@ -1,0 +1,27 @@
+Enumerators:
+
+We define enumerators with enum NAME {};, we then place the actual enumerators into the curly brackets. The value of each enumerator is from 0 to n-1, where
+n is the number of enumerators in NAME, DO NOT give an enumerator a value as it gets VERY fucky. The enumerators are in the namespace that the enumeration
+was initialized in, because of this the enumerators should be given names such as 'name_henry'. The enumerators are comma seperated and the block ends with
+a semi-colon. We can give them a different int type by doing something like enum NAME : std:uint_least8_t {};. They are useful for creating error codes, or
+for creating a set of related identities e.g. 0 corresponds to gun, 1 corresponds to knife etc. BECAREFUL, each enum will begin again at 0, and even though
+they are considered different types, if compared, they can be equal. To access them, something like Color paint{color_red} can be done, as enums are different
+types, we have to give paint the Color type, even though its really just an int.
+
+We can use enum classes to make our enums strongly typed and strongly scoped, meaning Color and Fruit cannot be the same no matter what, and to access either
+of them, we would have to do something like 'Color paint{Color::color_red}'. We create them with enum class Color {};
+
+Structs:
+
+We define structs similarly to enums like 'struct Color {};', however, instead of being comma seperated, the attributes are semi-colon seperated. To create
+a variable with type of a struct, we would do something like this 'Color red{};', and to give data to one of the attributes we would do 'red.hue = 53'. The
+struct variables are the same as regular variables and will hold garbage until we fill them. We can initialize them when creating the variable via something
+like 'Color red{1, 53, 76};', the list will fill in the variables by which were listed first in the definition e.g. if Color was struct color{x; hue; brightness;};
+then x would be 1, hue would be 53 and brightness would be 76. We can give them default values via something like 'hue{53};', but if we give them a list value,
+the list will take precedence. We can give the variables data via a list even after initialization, by red = {1, 53, 98}; and we can copy the data via 
+Color blue{red};. A struct is a type itself so we can pass entire struct variables as parameters or be returned by a function. We can have nested structs aswell.
+We can also define a struct in a header and then be able to share it across files.
+
+RNG:
+
+Try to avoid the srand() and rand() funtions that cstdlib has, they are reletivley poor at generating random numbers.
