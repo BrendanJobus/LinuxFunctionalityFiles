@@ -1,0 +1,15 @@
+LINUX
+https://www.reddit.com/r/unixporn/comments/mfryxp/awesome_just_learning_some_lua/
+https://github.com/manilarome/the-glorious-dotfiles
+https://www.reddit.com/r/FirefoxCSS/comments/ghrksm/cant_make_firefox_transparentlinux/
+
+WEB
+https://www.freecodecamp.org/news/my-journey-to-becoming-a-web-developer-from-scratch-without-a-cs-degree-2-years-later-and-what-i-4a7fd2ff5503/
+https://eloquentjavascript.net/09_regexp.html
+https://eloquentjavascript.net/06_object.html
+https://scotch.io/starters/react/getting-started-with-react-2019-edition
+
+ENGINE
+https://www.haroldserrano.com/blog/how-do-i-build-a-game-engine
+https://www.varsitytutors.com/hotmath/hotmath_help/topics/adding-and-subtracting-vectors
+https://www.learncpp.com/cpp-tutorial/constructor-member-initializer-lists/

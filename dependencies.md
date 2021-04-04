@@ -65,6 +65,8 @@
 * neovim
 * sublime and/or atom
 * discord
+* spotify
+* visual-studio-code
 
 * desmume
 * visualboyadvance-m
