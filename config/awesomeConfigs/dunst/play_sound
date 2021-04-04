@@ -1,0 +1,2 @@
+#!/bin/sh
+paplay /home/brendan/.config/dunst/sound.oga
