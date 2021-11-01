@@ -1,19 +1,37 @@
 C/C++
 c/C++ Clang
+C++ Intellisense
 clangd
 Community Material Theme
+Dark Horizon
 Debugger for java
+Excel Viewer
+Extension Pack for Java
 Github pull requests and issues
 Go
-Gruvbox Material
+Gruvbox Material
 Haskell
 Haskell syntax
 Horizon Theme
 Java language support
+Jupyter
+Jupyter Keymap
+Jupyter Notebook Renderers
+Language Support for Java
+Live Server
 Magic Python
+Markdown All in One
 Material Icon Theme
 Material Theme
 Material theme icons
+Maven for Java
 One Dark Pro
 Owlet
+Project Manager for Java
+Pylance
 Python
+Spell Right
+Test Runner for Java
+TODO Highlighter
+Visual Studio IntelliCode
+Word Count
