@@ -1,0 +1,12 @@
+About them:
+
+Maintenance and enhancement of the existing application.
+• Design and implement new functional modules from start to end.
+• Working with business consultants across different time-zones to diagnose problems and suggest fixes.
+• Planning and prioritizing development priorities working closely with the rest of the development team.
+• Learn about the business logic of the system and all technologies related to MX.3 (e.g. Java, XML, Maven, Oracle, Sybase, UNIX ).
+
+Notes from event:
+  Who:  Daniel Walsh
+
+  What:

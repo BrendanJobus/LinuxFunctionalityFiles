@@ -1,0 +1,33 @@
+About them:
+Huge research department, Irish part based in mulhudart just by blanch.
+
+Areas of research that I could be part of:
+NLP
+1. Transfer learning for extracting complex rules from text:
+2. Leaderboard construction beyond accuracy
+3. Knowledge graph construction from biomedical literature:
+4. Health and social care: Information extraction from PubMed articles
+
+Required Skills:
+
+Research expertise or experience in NLP, Machine Learning.
+Strong programming skills in Python/Java
+Good communication skills
+
+
+Risk analysis and Probabilistic Graphical Models in the domain of healthcare
+
+1. Accuracy Evaluation of a Population Healthcare Bayesian Network model
+2. Model building based on a health-related dataset
+3. Dynamically create and update models over patient live data
+
+Required skills:
+ - Strong programming skills in Python (pandas, scikit-learn, numpy) handling tabular data (SQL a plus)
+ - Knowledge of cloud deployments (Kubernetes, OpenShift, Travis) and UI development (React, TypeScript) a plus
+ - Good communication skills
+
+Notes from event:
+  Who:  Alessandra Pascale // Gal Weiss
+
+  What: Full access to the github
+        Exploring the space

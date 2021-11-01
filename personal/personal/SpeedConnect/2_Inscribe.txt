@@ -1,0 +1,22 @@
+How to connect:
+https://inscribe-ai.zoom.us/j/87345663880?pwd=Ti8xR2ZORHdzY25YbG1TV2p2N29ydz09
+Meeting ID: 873 4566 3880
+Passcode: 440632
+
+About them:
+Deal with fraud detection and reduction.
+
+Work on fraud detection logic and technical solutions to uncover fraud.
+
+Required:
+Studied Machine learning.
+Naturally curious and willing to dig deeply into a problem to find a solution.
+Are thoughtful about code quality ad software architecture.
+Are familiar with python and django or similar language and framework.
+
+Django: python web framework.
+
+Notes from event:
+  Who:  Robert McCaffrey
+
+  What:

@@ -1,0 +1,19 @@
+About them:
+
+What they do:
+Nitro Pro is an application used to create, edit, sign, and secure Portable Document Format files and digital documents
+
+What you'll be doing:
+
+Working closely with a no-bullshit tightly knit engineering
+Helping establish best engineering practices and learning from others
+Gaining satisfaction from easing customer pain
+Participate in Hack weeks
+
+Data Engineering/Data analysis/science: Apply data science techniques to large data sets to discover insights and build ML solutions, Large-scale data processing frameworks, Event driven and Streaming architectures, Restful Services, Scala, SQL, Kafka
+
+Notes from event:
+  Who:  Garry Barcoe
+
+  What: Brian director of data
+        large scaling data architecture

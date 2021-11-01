@@ -1,0 +1,17 @@
+About them:
+Big data solutions provider to insurance industry.
+Sells data mining platforms through online portals, computer-assisted legal research and information about vast swaths of consumers around the world.
+
+Learn about geospatial and big data in both java and HPCC.
+
+email him by end of week to be in interviews for next week.
+infoseq
+java q's
+sql q's
+
+Looking for strong analytical, problem solving and computer programming skills with knowledge of java/javascript.
+
+Notes from event:
+  Who:  Alastair Holland
+
+  What:
