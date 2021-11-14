@@ -13,3 +13,11 @@ ENGINE
 https://www.haroldserrano.com/blog/how-do-i-build-a-game-engine
 https://www.varsitytutors.com/hotmath/hotmath_help/topics/adding-and-subtracting-vectors
 https://www.learncpp.com/cpp-tutorial/constructor-member-initializer-lists/
+
+ML:
+https://cs231n.github.io
+google - dropout regularization
+
+
+
+TRAILS END FORM!!!
